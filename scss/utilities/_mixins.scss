@@ -134,7 +134,7 @@
     @each $name, $style in $val{
         &.#{$name}:hover{
             background-color: lightColor($style,15%);
-            color: rgb(9, 108, 126);
+            color: darkColor($style, 25%);
             @include fontGroup($weight: bold);
         }
     }

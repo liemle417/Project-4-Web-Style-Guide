@@ -11,3 +11,7 @@
 @function lightColor($val, $default-value: 15%){
     @return(lighten($val, $default-value)); 
 }    
+
+@function darkColor($val, $default-value: 35%){
+    @return(darken($val, $default-value)); 
+}    

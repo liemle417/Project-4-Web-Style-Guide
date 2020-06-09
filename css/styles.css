@@ -352,23 +352,23 @@ a {
       padding: 10px 30px; } }
   .btn.default:hover {
     background-color: #9cecfd;
-    color: #096c7e;
+    color: #03a6ca;
     font-weight: bold; }
   .btn.error:hover {
     background-color: #f1b5b8;
-    color: #096c7e;
+    color: #b6242a;
     font-weight: bold; }
   .btn.info:hover {
     background-color: #bdafd9;
-    color: #096c7e;
+    color: #533c80;
     font-weight: bold; }
   .btn.success:hover {
     background-color: #9ddfb0;
-    color: #096c7e;
+    color: #2b8446;
     font-weight: bold; }
   .btn.warning:hover {
     background-color: #feb4a2;
-    color: #096c7e;
+    color: #d12d02;
     font-weight: bold; }
 
 @media (min-width: 768px) {
