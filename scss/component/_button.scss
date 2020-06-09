@@ -1,0 +1,33 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+// =============================================
+//              Buttons                         
+// =============================================
+
+.btn {
+    @include margin($top: 15px);
+    @include styles($width: 100%, 
+                    $color: $color-white,);
+    @include padding(10px 0);
+    @include border(none, $radius: 5px);
+    text-transform: uppercase;
+
+    @include mq("medium"){
+      @include padding(10px 30px);    
+    }
+    transition: background-color 0.5s ease-in;
+    @include buttonLighten($val);
+  }
+
+
+  
+@include mq("medium"){
+  .btn + .btn {
+    @include margin($left: 10px);
+  }
+}
+
+
+//Apply Mixin to style these buttons
+@include buttonStyles($val);
+

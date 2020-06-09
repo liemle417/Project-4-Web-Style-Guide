@@ -1,0 +1,13 @@
+@import "../utilities/variables";
+
+@function calculate-em($future-value, $base-font) {
+    @return(($future-value/$base-font) * 1em);
+}
+
+@function calculate-col($firstValue, $numColum){
+    @return(($firstValue/$numColum) * 100%);    
+}
+
+@function lightColor($val, $default-value: 15%){
+    @return(lighten($val, $default-value)); 
+}    

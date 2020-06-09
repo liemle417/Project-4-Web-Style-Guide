@@ -1,0 +1,59 @@
+$info-background-color: #927bc1; //this is also 'col-1-background-color'
+$warning-background-color: #fd7856; //this is also 'col-2-background-color'
+$col-3-background-color: #deb2ee;
+$col-4-background-color: #7ee6fd;
+$col-5-background-color: #88d9a0;
+$col-6-background-color: #4da2bb;
+$col-7-background-color: #ec9fa3;
+$col-8-background-color: #fd9f85;
+$error-background-color: #e4757a; //this is also 'col-9-background-color'
+$success-background-color: #63cc82; //this is also 'col-10-background-color'
+$default-background-color: #51ddfc; //this is also 'col-11-background-color'
+$col-12-background-color: #80e8d1;
+
+$color-primary: #58e1c1;
+$color-secondary: #777;
+$color-white: #fff;
+
+//Variables for Button
+$val:   ('default', $default-background-color), 
+        ('error', $error-background-color), 
+        ('info', $info-background-color), 
+        ('success', $success-background-color), 
+        ('warning', $warning-background-color);
+
+//Variable for THEME colors
+$themes: (
+        $info-background-color,
+        $warning-background-color,
+        $col-3-background-color,
+        $col-4-background-color,
+        $col-5-background-color,
+        $col-6-background-color,
+        $col-7-background-color,
+        $col-8-background-color,
+        $error-background-color,
+        $success-background-color,
+        $default-background-color,
+        $col-12-background-color,);
+
+
+$base-font: 16px;
+$general-font: 'Lato', sans-serif;
+
+
+
+//Variable Media Queries
+$breakpoint-small: 1px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1400px;
+
+//FONT VARIABLES
+
+$font-weight-darkest: 700;
+$font-weight-dark: 300;
+$font-weight-light: 100;
+
+
+//TYPOGRAPHY VARIABLES
+$nameHeadline: (primary, secondary, link);

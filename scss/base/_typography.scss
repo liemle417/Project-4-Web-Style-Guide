@@ -1,0 +1,39 @@
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "../utilities/function";
+
+* {
+  @include basicStyle;
+}
+
+p {
+  line-height: 1.45em;
+}
+
+a {
+  text-decoration: none;
+}
+
+// =============================================
+//              Typography                      
+// =============================================
+@include headln(primary);
+@include headln(secondary);
+@include headln(link);
+
+  %blckqute {
+    @include fontGroup($size: calculate-em(24px, $base-font), 
+                       $weight: $font-weight-dark, 
+                       $style: italic);
+    @include margin($left: 20px);
+    @include padding($left: 20px);
+    @include border($left: 8px solid $color-primary, $radius: 5px);
+}
+  
+  .blockquote {
+    @extend %blckqute;
+  }

@@ -1,0 +1,69 @@
+// =============================================
+//              Grid System                     
+// =============================================
+.container {
+    @include padding(0 10px);
+    
+    @include mq("medium"){
+      max-width: $breakpoint-large;
+      @include flex($disp: flex, $dir: column);
+      @include margin($left: auto, $right: auto);
+    }
+
+  }
+  
+  .row {
+    @include flex($disp: flex, $dir: column);
+    @include padding(1em 10px);
+
+    @include mq("medium"){
+        @include flex($dir: row);
+    }
+  }
+  
+  [class^=col] {
+    @include margin($top: 10px);
+    @include flex($basis: 100%);
+    min-height: 25px;
+    @include padding(10px);
+    @include border($radius: 5px);
+
+    @include mq("medium"){
+      @include flex($disp: flex, $just: center);
+      @include margin($top: 0);
+      align-items: center;
+      }
+  }
+
+  
+  @include themeColors($themes);
+      
+  .card {
+    @include flex($basis: 100%);
+  }
+
+  
+  
+@include mq("medium"){
+  .centered {
+    @include flex($disp: block);
+    @include margin($left: auto, $right: auto);
+    &.col-7{
+      text-align: center;
+    }
+  }
+        
+  [class^=col] + [class^=col] {
+    @include margin($left: 10px);
+  }
+
+  @for $i from 1 through 12{
+    .col-#{$i}{
+      @include flex($basis: calculate-col($i, 12));
+    }
+  }
+
+  .logo {
+    @include margin($left: initial, $right: initial);
+  }
+}

@@ -1,0 +1,27 @@
+/* ============================================= */
+/*              Images                           */
+/* ============================================= */
+@import "../utilities/mixins";
+
+%common-attribute{
+@include flex($disp: block);
+@include margin($left: auto, $right: auto, $top: 10px);
+}
+
+.img-avatar {
+  @extend %common-attribute;
+  max-width: 100%; 
+  max-height: 100%;
+  }
+  
+  .img-frame {
+    @extend %common-attribute;
+    max-width: 100%;
+    @include padding(13px);
+    @include border(1px solid #ccc);
+  }
+  
+  .img-logo {
+    @include flex($disp: block);
+    @include margin($left: auto, $right: auto);
+  }

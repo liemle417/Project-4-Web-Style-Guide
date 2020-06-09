@@ -1,0 +1,173 @@
+@import "../utilities/variables";
+@import "../utilities/function";
+
+//Mixin Base Style
+@mixin styles($width: null, 
+              $height: null,
+              $color: null,
+              $top: null,
+              $left: null,
+              $bottom: null,
+              $right: null,
+            ) {
+                width: $width;
+                height: $height;
+                color: $color;
+                top: $top;
+                left: $left;
+                bottom: $bottom;
+                right: $right;
+                @content;
+            }
+
+//Mixin FONT
+@mixin fontGroup(
+                    $size:null,
+                    $weight: null,
+                    $style: null,
+                    $family: null,){
+                        font-size: $size;
+                        font-weight: $weight;
+                        font-style: $style;
+                        font-family: $family;
+                    }
+
+@mixin basicStyle{
+    @include fontGroup($family: $general-font);
+    color: $color-secondary;
+    box-sizing: border-box;
+}
+
+//Mixin Padding
+@mixin padding( 
+                $all:null,
+                $top:null, 
+                $right:null, 
+                $bottom:null, 
+                $left:null,){
+                    padding: $all;
+                    padding-top: $top;
+                    padding-right: $right;
+                    padding-bottom: $bottom;
+                    padding-left: $left;
+                }
+
+//Mixin Margin
+@mixin margin(
+                $all:null,
+                $top:null, 
+                $right:null, 
+                $bottom:null, 
+                $left:null,){
+                    margin: $all;
+                    margin-top: $top;
+                    margin-right: $right;
+                    margin-bottom: $bottom;
+                    margin-left: $left;
+                }
+
+//Mixin Border
+@mixin border(
+                $all:null,
+                $top:null, 
+                $right:null, 
+                $bottom:null, 
+                $left:null,
+                $radius: null, ){
+                    border: $all;
+                    border-top: $top;
+                    border-right: $right;
+                    border-bottom: $bottom;
+                    border-left: $left;
+                    border-radius: $radius;
+                }
+
+//Mixin Flex
+@mixin flex(
+    $disp: null,
+    $dir: null,
+    $wrap: null,
+    $basis: null,
+    $just: null,){
+                    display: $disp;
+                    flex-direction: $dir;
+                    flex-wrap: $wrap;
+                    flex-basis: $basis;
+                    justify-content: $just;
+                }
+
+//Mixin TYPOGRAPHY
+
+@mixin headln($nameHeadline){
+    @if $nameHeadline == "primary"{
+        .headline-#{$nameHeadline}{
+            color: $color-primary;
+            @include margin($left: 10px);
+        }
+    }
+    @else if $nameHeadline == "secondary"{
+        .headline-#{$nameHeadline}{
+            @include fontGroup($weight: 300);
+            color: $color-secondary;
+        }
+    }
+    @else{
+        .#{$nameHeadline}{
+            color: $default-background-color;
+            @include fontGroup($weight: 700);
+        }
+    }
+}
+
+//Mixin to style BUTTONS
+@mixin buttonStyles($val){
+    @each $name, $style in $val {
+        .#{$name} {
+            background-color: $style;
+        }
+    }
+}
+
+
+//Mixin to Lighten Button
+@mixin buttonLighten($val){
+    @each $name, $style in $val{
+        &.#{$name}:hover{
+            background-color: lightColor($style,15%);
+            color: rgb(9, 108, 126);
+            @include fontGroup($weight: bold);
+        }
+    }
+}
+
+
+@mixin themeColors($themes){
+    @for $count from 1 through length($themes){
+        .theme.col-#{$count}{
+             background-color: nth($themes, $count);
+        } 
+    }
+}
+
+
+//Mixin for Media Queries
+@mixin mq($breakpoint) {
+    @if $breakpoint == "small" {
+        @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "medium" {
+        @media (min-width: $breakpoint-medium) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "large" {
+        @media (min-width: $breakpoint-large) {
+            @content;
+        }
+    }
+    @else {
+        @error "No value could be retrieved for #{$breakpoint}";
+    }
+}
