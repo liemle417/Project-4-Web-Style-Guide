@@ -162,12 +162,9 @@
             @content;
         }
     }
-    @else if $breakpoint == "large" {
+    @else {
         @media (min-width: $breakpoint-large) {
             @content;
         }
-    }
-    @else {
-        @error "No value could be retrieved for #{$breakpoint}";
     }
 }
